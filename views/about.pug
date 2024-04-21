@@ -1,0 +1,42 @@
+doctype html
+html
+  head 
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='Some description')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src="script.js")
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    link(rel='stylesheet', href='/css/main.css')
+    title Creating html with PUG
+
+  body
+
+    h1 Nice to see you here..
+    p.title Welcome to our website
+    p my name is Franco!!
+    block content 
+
+
+    ul
+     each color in ['Red', 'Yellow', 'Blue']
+      li= color
+
+    ul
+     each color, index in ['Red', 'Yellow', 'Blue']
+      li= 'Color number ' + index + ': ' + color
+
+
+- var name = 'Franco'
+- var age = 35
+- var roger = { name: 'Roger' }
+- var dogs = ['Roger', 'Syd']
+
+if name
+  h2 Hello from #{name} who is #{age} years old
+else if anotherName
+  h2 Hello from #{anotherName}
+else
+  h2 Hello
+
+//-   (Till middleware)
